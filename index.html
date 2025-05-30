@@ -1,81 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>酒店介绍</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-        }
-        .hotel-images img {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        #customer-service {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        #customer-service button {
-            background-color: #fff;
-            color: #333;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-    </style>
-    <!-- 添加Dialogflow API -->
-    <script src="https://www.gstatic.com/dialogflow-console/embedded/js/embed.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>酒店介绍</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+    }
+    .hotel-images img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 6px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    #customer-service {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 999;
+    }
+    #customer-service button {
+      background-color: #fff;
+      color: #333;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    #chatbot-container {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 350px;
+      height: 430px;
+      z-index: 999;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      background-color: white;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我们的酒店</h1>
-    </header>
-    <section>
-        <h2>关于我们</h2>
-        <p>我们的酒店提供舒适的住宿环境，优质的服务以及便捷的地理位置，是您旅行和商务的理想选择。</p>
-    </section>
-    <section class="hotel-images">
-        <h2>酒店图片</h2>
-        <img src="hotel1.jpg" alt="酒店外观">
-        <img src="hotel2.jpg" alt="酒店大厅">
-        <img src="hotel3.jpg" alt="酒店客房">
-    </section>
-    <section>
-        <h2>联系我们</h2>
-        <p>地址：123 酒店街，城市，国家</p>
-        <p>电话：+123 456 7890</p>
-        <p>邮箱：info@hotel.com</p>
-    </section>
-    <!-- 修改客服模块以支持Dialogflow -->
-   <div id="chatbot-container">
+  <header>
+    <h1>欢迎来到我们的酒店</h1>
+  </header>
+
+  <section>
+    <h2>关于我们</h2>
+    <p>我们的酒店提供舒适的住宿环境，优质的服务以及便捷的地理位置，是您旅行和商务的理想选择。</p>
+  </section>
+
+  <section class="hotel-images">
+    <h2>酒店图片</h2>
+    <img src="hotel1.jpg" alt="酒店外观" />
+    <img src="hotel2.jpg" alt="酒店大厅" />
+    <img src="hotel3.jpg" alt="酒店客房" />
+  </section>
+
+  <section>
+    <h2>联系我们</h2>
+    <p>地址：123 酒店街，城市，国家</p>
+    <p>电话：+123 456 7890</p>
+    <p>邮箱：info@hotel.com</p>
+  </section>
+
+  <!-- ✅ Dialogflow 机器人区域 -->
+  <div id="chatbot-container">
     <iframe
       allow="microphone;"
       width="100%"
@@ -84,7 +99,6 @@
     </iframe>
   </div>
 
-  <!-- 客服提示 -->
   <div id="customer-service">
     <p>需要帮助？点击右下角和机器人对话！</p>
   </div>
