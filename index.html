@@ -1,83 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>酒店介绍</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-        }
-        .hotel-images img {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        #customer-service {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        #customer-service button {
-            background-color: #fff;
-            color: #333;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>酒店介绍</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: #555;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .hotel-images img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button[type="submit"] {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    df-messenger {
+      position: fixed;
+      bottom: 0;
+      right: 20px;
+      z-index: 999;
+    }
+
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    iframe.map {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我们的酒店</h1>
-    </header>
-    <section>
-        <h2>关于我们</h2>
-        <p>我们的酒店提供舒适的住宿环境，优质的服务以及便捷的地理位置，是您旅行和商务的理想选择。</p>
-    </section>
-    <section class="hotel-images">
-        <h2>酒店图片</h2>
-        <img src="hotel1.jpg" alt="酒店外观">
-        <img src="hotel2.jpg" alt="酒店大厅">
-        <img src="hotel3.jpg" alt="酒店客房">
-    </section>
-    <section>
-        <h2>联系我们</h2>
-        <p>地址：123 酒店街，城市，国家</p>
-        <p>电话：+123 456 7890</p>
-        <p>邮箱：info@hotel.com</p>
-    </section>
-    <div id="customer-service">
-        <p>需要帮助？联系我们的客服！</p>
-        <button onclick="window.location.href='mailto:info@hotel.com'">发送邮件</button>
-    </div>
-    <footer>
-        <p>&copy; 2025 酒店名称. 保留所有权利。</p>
-    </footer>
+
+  <!-- 顶部导航 -->
+  <nav>
+    <a href="#about">关于我们</a>
+    <a href="#images">酒店图片</a>
+    <a href="#contact">联系我们</a>
+    <a href="#form">留言表单</a>
+  </nav>
+
+  <header>
+    <h1>欢迎来到我们的酒店</h1>
+    <p>您的舒适之选</p>
+  </header>
+
+  <section id="about">
+    <h2>关于我们</h2>
+    <p>我们的酒店提供舒适的住宿环境，优质的服务以及便捷的地理位置，是您旅行和商务的理想选择。</p>
+  </section>
+
+  <section id="images" class="hotel-images">
+    <h2>酒店图片</h2>
+    <img src="hotel1.jpg" alt="酒店外观" />
+    <img src="hotel2.jpg" alt="酒店大厅" />
+    <img src="hotel3.jpg" alt="酒店客房" />
+  </section>
+
+  <section id="contact">
+    <h2>联系我们</h2>
+    <p>地址：123 酒店街，城市，国家</p>
+    <p>电话：+123 456 7890</p>
+    <p>邮箱：info@hotel.com</p>
+
+    <h3>酒店位置</h3>
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799143869!2d-74.25987368718442!3d40.69767006358666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250bfa6072953%3A0xf4c58c68f3f5aab!2sNew%20York!5e0!3m2!1sen!2sus!4v1614320332464!5m2!1sen!2sus"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <section id="form">
+    <h2>留言表单</h2>
+    <form action="https://formspree.io/f/your-id" method="POST">
+      <label for="name">姓名：</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">邮箱：</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">留言：</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">提交</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 酒店名称. 保留所有权利。</p>
+  </footer>
+
+<!-- 联系客服按钮 -->
+<div id="chat-button" style="display: block;">💬 联系客服</div>
+
+<!-- 回到顶部按钮 -->
+<div id="back-to-top">⬆ 回到顶部</div>
+
+<!-- Dialogflow 机器人脚本 -->
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+<!-- Dialogflow 聊天组件 -->
+<df-messenger
+    id="chat-widget"
+    intent="WELCOME"
+    chat-title="酒店客服"
+    agent-id="c6425025-574f-458d-ba4d-ed047a64ac5b"
+    language-code="zh-cn"
+    style="display: none;">
+</df-messenger>
+
+  <!-- 页面脚本 -->
+  <script>
+    const chatBtn = document.getElementById('chat-button');
+    const messenger = document.getElementById('chat-widget');
+
+    chatBtn.addEventListener('click', () => {
+        messenger.style.display = 'block';
+        chatBtn.style.display = 'none';
+    });
+
+    const backToTop = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
 </body>
 </html>
