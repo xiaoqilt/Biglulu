@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒店介绍</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        .hotel-images img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #customer-service {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #customer-service button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>欢迎来到我们的酒店</h1>
+    </header>
+    <section>
+        <h2>关于我们</h2>
+        <p>我们的酒店提供舒适的住宿环境，优质的服务以及便捷的地理位置，是您旅行和商务的理想选择。</p>
+    </section>
+    <section class="hotel-images">
+        <h2>酒店图片</h2>
+        <img src="hotel1.jpg" alt="酒店外观">
+        <img src="hotel2.jpg" alt="酒店大厅">
+        <img src="hotel3.jpg" alt="酒店客房">
+    </section>
+    <section>
+        <h2>联系我们</h2>
+        <p>地址：123 酒店街，城市，国家</p>
+        <p>电话：+123 456 7890</p>
+        <p>邮箱：info@hotel.com</p>
+    </section>
+    <div id="customer-service">
+        <p>需要帮助？联系我们的客服！</p>
+        <button onclick="window.location.href='mailto:info@hotel.com'">发送邮件</button>
+    </div>
+    <footer>
+        <p>&copy; 2025 酒店名称. 保留所有权利。</p>
+    </footer>
+</body>
+</html>
