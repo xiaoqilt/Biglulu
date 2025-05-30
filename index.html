@@ -121,7 +121,6 @@
       border-radius: 8px;
     }
   </style>
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 </head>
 <body>
 
@@ -191,20 +190,17 @@
   <!-- 回到顶部按钮 -->
   <div id="back-to-top">⬆ 回到顶部</div>
 
-  <!-- Dialogflow 机器人（默认隐藏） -->
+  <!-- Dialogflow 机器人脚本 -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+  <!-- Dialogflow 聊天组件 -->
   <df-messenger
     intent="WELCOME"
     chat-title="酒店客服"
     agent-id="c6425025-574f-458d-ba4d-ed047a64ac5b"
     language-code="zh-cn"
-    style="display: none;">
+    id="chat-widget">
   </df-messenger>
-  <iframe
-    allow="microphone;"
-    width="350"
-    height="430"
-    src="https://console.dialogflow.com/api-client/demo/embedded/c6425025-574f-458d-ba4d-ed047a64ac5b">
-</iframe>
       
 
   <script>
